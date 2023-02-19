@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block main_content %}
+
+    <form class="form" method="POST">
+        <textarea class="form__input" id="habit" name="habit" placeholder="Add a new daily habit"></textarea>  {#placeholder se nebere jako výstup z formu, nýbrž hodnota mezi >< by se tak přepsala#}
+        <button class="form__button" type="submit" >Add</button>
+        
+    </form>
+
+{% endblock %}

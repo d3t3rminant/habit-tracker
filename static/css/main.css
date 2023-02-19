@@ -1,0 +1,195 @@
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+.header, .main {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 1rem;
+  border: solid 2px rgba(0, 0, 0, 0.733);
+  border-radius: 0px 0px 6px 6px;
+}
+
+/*Tady nastava maly problemek - chci si pridani habitu ohranicit, aby to vypadalo lepe, jenze zaroven s tim se ohranici i domovska stranka, pac dedicnost. Jupi */
+
+.header {
+  display: flex;
+  background-color: black;
+  color: white;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 6px 6px 0px 0px;
+}
+
+.header__link {
+  color:inherit;
+  text-decoration: none;
+  transition: color 0.15s ease-in;
+}
+
+.header__link:hover {
+  cursor: pointer;
+  color: #f9dba0
+}
+
+
+.header__logo {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;   /* to roztáhne prvky na celou šířku*/
+  font-size: 1.1rem;
+}
+
+.form__input {
+  padding: 1rem;
+  font-family: inherit;
+  font-size: inherit;
+  resize:none;
+  border: 2px solid rgba(0, 0, 0, 0.452);
+  border-radius: 6px;
+  background-color: #fafafa;
+  margin-bottom: 1rem;
+}
+
+.form__button {
+  font-size: inherit;
+  background-color: #f9dba0;
+  cursor: pointer;
+  border-radius: 6px;
+  border: none;
+  padding: 0.5rem 2.5rem; /*nahore/dole   vlevo/vpravo*/
+  align-self: flex-start;
+}
+
+.form__button:hover {
+  outline: 1px solid black;
+}
+
+
+.dates {
+  display: flex;
+  justify-content: space-around;
+  color: black;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+
+}
+
+.dates__link {
+  color: inherit;
+  text-decoration: none;
+  padding: 0.4rem 0.75rem;
+  border-radius: 6px;
+  outline: none;
+
+}
+
+.dates__link--current {
+  background-color: #f9dba0;
+  font-weight: 700;
+
+}
+
+
+.date {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+
+.dates__link:not(.dates__link--current):hover {    /*takto se můžeme vyhnout zacílení specifického prvku*/
+ background-color: #f9dba034;
+}
+
+
+.dates__link:first-of-type,
+.dates__link:last-of-type,
+.dates__link:nth-of-type(2),    /*tohle je druhy od zacatku*/
+.dates__link:nth-last-of-type(2) { /*tohle je druhy od konce*/
+display: none;}
+
+
+@media screen and (min-width: 25rem) {
+.dates__link:nth-of-type(2),    
+.dates__link:nth-last-of-type(2) 
+{ 
+display: block;
+}
+
+}
+
+@media screen and (min-width: 35rem) {
+  .dates__link:first-of-type,
+  .dates__link:last-of-type  
+{display: block;}
+}
+
+
+
+.habit {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 24px;
+  padding: 5px 15px 5px 15px;
+  margin-bottom: 15px;
+  background-color: #fff2d8;
+  border: 2px solid black;
+  border-radius: 6px;
+}
+
+
+
+.uncompleted {
+  padding: 0;
+}
+.uncompleted:hover {
+  background-color: #e9cd87;
+}
+
+.habit__form {
+  width: 100%;
+}
+
+.habit__button {
+  display: block;
+  width: 100%;
+  padding: 5px 15px 5px 15px;
+  font-size: inherit;
+  font-family: inherit;
+  text-align: left;
+  border: none;
+  background-color: unset;
+  cursor: pointer;
+
+}
+
+.habit:first-of-type{
+  margin-top: 20px;
+}
+.habit__icon {
+  max-width: 28px;
+  margin-left: 5px;
+
+}
+
+.habit__name {
+  margin: 0;
+}
+
+.completed {
+  background-color:#fff2d8;
+}
